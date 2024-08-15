@@ -29,8 +29,3 @@ function mergeArrays(arr) {
 
 const arr = [[1, 3, 5], [2, 4, 6], [7, 8, 9]];
 console.log(mergeArrays(arr)); //
-
-function mergeSort(arr) {
-    if (arr.length === 0) return []
-    if (arr.length === 1) return arr;
-}
