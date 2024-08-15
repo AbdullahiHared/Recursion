@@ -1,9 +1,13 @@
-function fibonacci(n) {
-    const storage = [0, 1];
-    for (let i = 2; i <= n; i++) {
-        storage.push(storage[i - 1] + storage[i - 2]);
+function fibRec(n) {
+    let store = [0, 1];
+    function helper(n) {
+        if (store[n] !== undefined) return store[n];
+        store[n] = helper(n - 1) + helper(n - 2);
+        return store[n];
     }
-    return storage;
+
+    helper(n);
+    return store;
 }
 
-console.log(fibonacci(8)); // [0, 1, 1, 2, 3, 5, 8, 13, 21]
+console.log(fibRec(-1)); // [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
